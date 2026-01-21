@@ -1,0 +1,11 @@
+firstSet = {"piyush",2.2,True,"Piyush","Saxena","piyush"}
+print(firstSet)
+firstSet.add("Python")
+print(firstSet)
+print(firstSet.pop())
+print(firstSet.pop())
+print(firstSet)
+firstSet.remove("Piyush")
+print(firstSet)
+firstSet.update("update")
+print(firstSet)
