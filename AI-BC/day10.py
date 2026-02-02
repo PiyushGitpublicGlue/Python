@@ -25,25 +25,50 @@ class Employee:
         self.fname = fname
         print(f"{self.fname} with card is {self.cardid} Constructor created in pyhton")
 
+
+    # instance method
+    
+    def accessVariables(self):
+        print("I'am from instance 'accessVariables' method")
+        #print(self.cardid)
+        print(Employee.employeeName)
+
     # instance method
 
     def getPunchInTime(self, startTime,endTime):
         #name = "Piyush Saxena" #local variable
+        #accessVariables()
+        Employee.accessVariables()
         diff = endTime-startTime
         return f'{self.cardid} User spent time as : {diff}'
     
+
     # class method
     @classmethod # decorator
     def updateName(cls,companyname):
         cls.employeeName = companyname
 
+    @classmethod
+    def accessVariableInsideClassMethods(cls):
+        print("I'am from class method")
+        cls.accessVariables()
+        #print(self.fname)
+        #print(fname)
+        #print(cls.fname)
+        #print(cls.fname)
+    
+    @staticmethod
+    def m4():
+        print("Here i'am")
+        print(Employee.employeeName)
+
 # object creation
 e1 = Employee(45,"Piyush Saxena")
-e2 = Employee(50,"Python BI")
-res = e2.getPunchInTime(80,100)
-#print(res)
-e1.updateName("infosys")
-#Employee.employeeName="Infosys"
-print(e1.employeeName)
-print(e2.employeeName)
-
+Employee.employeeName="Piyush"
+e1.m4()
+#e1.accessVariables()
+#e1.accessVariableInsideClassMethods()
+#Employee.accessVariableInsideClassMethods()
+#Employee.accessVariables()
+#print(e1.fname)
+#e1.getPunchInTime(66,88)
